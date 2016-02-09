@@ -1,0 +1,16 @@
+.brush {
+    background-image: url(icon/brush.svg);
+}
+
+.eraser {
+    background-image: url(icon/eraser.svg);
+}
+
+.undo {
+    background-image: url(icon/undo.svg);
+}
+
+.redo {
+    background-image: url(icon/redo.svg);
+
+}

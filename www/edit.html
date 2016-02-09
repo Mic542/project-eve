@@ -2,15 +2,16 @@
 
 <html>
     <head>
+      <link rel="stylesheet" type="text/css" href="css/edit.css">
       <script src="plugins/fabric.min.js"></script>
       <script src="plugins/jquery-1.8.2.min.js"></script>
     </head>
     <body>
       <canvas id="c" width="490" height="220" style="border:1px solid #000000;"></canvas>
       <script src="js/edit.js"></script>
-      <button onclick="changeToBrush()">Brush</button>
-      <button onclick="changeToEraser()">eraser</button>
-      <button onclick="undo()">undo</button>
-      <button onclick="redo()">redo</button>
+      <img onclick="changeToBrush()" src="img/icon/brush.svg" style="width:50px; top:9px; position:relative"></img>
+      <img onclick="changeToEraser()" src="img/icon/eraser.svg" style="width:50px; top:9px; position:relative"></img>
+      <img onclick="undo()" src="img/icon/undo.svg" style="width:50px; top:9px; position:relative"></img>
+      <img onclick="redo()" src="img/icon/redo.svg" style="width:50px; top:9px; position:relative"></img>
     </body>
 </html>
