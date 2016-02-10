@@ -1,0 +1,66 @@
+.canvas-container {
+  top: 80px;
+  position: absolute;
+}
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 3px;
+  border-radius: 25px;
+  background-color: #85D2EC;
+  float: left;
+  margin: 5px;
+}
+
+.selected {
+  background-color: #ff7276;
+}
+
+.icons {
+  width: 30px;
+  padding-top: 10px;
+}
+
+
+.brush {
+    background-image: url(icon/brush.svg);
+    width: 30px;
+    position: relative;
+    top: 9px;
+    -moz-border-radius: 50px;
+  	-webkit-border-radius: 50px;
+  	border-radius: 50px;
+}
+
+.eraser {
+    background-image: url(icon/eraser.svg);
+    width: 30px;
+    position: relative;
+    top: 9px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.undo {
+    background-image: url(icon/undo.svg);
+    width: 30px;
+    position: relative;
+    top: 9px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.redo {
+    background-image: url(icon/redo.svg);
+    width: 30px;
+    position: relative;
+    top: 9px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
