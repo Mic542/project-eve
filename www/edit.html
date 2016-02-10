@@ -7,11 +7,12 @@
       <script src="plugins/jquery-1.8.2.min.js"></script>
     </head>
     <body>
-      <canvas id="c" width="490" height="220" style="border:1px solid #000000;"></canvas>
+      <div onclick="changeToBrush()" ontouchstart="changeToBrush()" class="btn-circle selected" id="brush"><img src="img/icon/brush.svg" class="icons" /></div>
+      <div onclick="changeToEraser()" ontouchstart="changeToErase()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="icons" /></div>
+      <div onclick="undo()" ontouchstart="undo()" class="btn-circle" id="undo"><img src="img/icon/undo.svg" class="icons" /></div>
+      <div onclick="redo()" ontouchstart="redo()" class="btn-circle" id="redo"><img src="img/icon/redo.svg" class="icons" /></div>
+      <button onclick="toText()" ontouchstart="toText()">TEXT</button>
+      <canvas id="c" width="240" height="220"></canvas>
       <script src="js/edit.js"></script>
-      <img onclick="changeToBrush()" src="img/icon/brush.svg" style="width:50px; top:9px; position:relative"></img>
-      <img onclick="changeToEraser()" src="img/icon/eraser.svg" style="width:50px; top:9px; position:relative"></img>
-      <img onclick="undo()" src="img/icon/undo.svg" style="width:50px; top:9px; position:relative"></img>
-      <img onclick="redo()" src="img/icon/redo.svg" style="width:50px; top:9px; position:relative"></img>
     </body>
 </html>
