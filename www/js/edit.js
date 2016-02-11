@@ -6,6 +6,7 @@ var newtext= false;
 var textsize;
 var brush_color = 'rgba(0,0,0,1)';
 
+fabric.Object.prototype.selectable = false;
 canvas.isDrawingMode = !canvas.isDrawingMode;
 canvas.setBackgroundColor('rgba(255,255,208,1)', canvas.renderAll.bind(canvas));
 
@@ -19,6 +20,7 @@ canvas.on('mouse:up', function(event){
   left: pointer.x,
   top: pointer.y,
   fontSize: textsize,
+  selectable: true
 }));
 newtext = false;
 toSelect();
@@ -98,6 +100,7 @@ function backToBrush(){
   document.getElementById("brush").className = "btn-circle selected";
   document.getElementById("eraser").className = "btn-circle";
   document.getElementById("selectionTool").className = "btn-circle";
+  document.getElementById("brushIcon").src = "img/icon/brush.svg";
 };
 
 function toSelect(){
