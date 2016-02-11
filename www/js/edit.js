@@ -27,12 +27,16 @@ function changeToBrush(){
   canvas.isDrawingMode = true;
   canvas.freeDrawingBrush.width = lastbrushsize;
   canvas.freeDrawingBrush.color = 'rgba(0,0,0,1)';
+  document.getElementById("brush").className = "btn-circle selected";
+  document.getElementById("eraser").className = "btn-circle";
 };
 
 function changeToEraser(){
   canvas.isDrawingMode = true;
   canvas.freeDrawingBrush.width = 200;
   canvas.freeDrawingBrush.color = canvas.backgroundColor;
+  document.getElementById("eraser").className = "btn-circle selected";
+  document.getElementById("brush").className = "btn-circle";
 };
 
 
