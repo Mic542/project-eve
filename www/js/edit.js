@@ -4,6 +4,7 @@ var h = [];
 var lastbrushsize;
 var newtext= false;
 var textsize;
+var brush_color = 'rgba(0,0,0,1)';
 
 canvas.isDrawingMode = !canvas.isDrawingMode;
 canvas.setBackgroundColor('rgba(255,255,208,1)', canvas.renderAll.bind(canvas));
@@ -14,7 +15,7 @@ canvas.on('mouse:up', function(event){
   var pointer = canvas.getPointer(event.e);
   if(canvas.isDrawingMode == false && newtext == true){
     canvas.add(new fabric.IText('Tap and Type', {
-  fontFamily: 'arial black',
+  fontFamily: 'comic sans',
   left: pointer.x,
   top: pointer.y,
   fontSize: textsize,
@@ -27,7 +28,7 @@ toSelect();
 function changeToBrush(){
   canvas.isDrawingMode = true;
   canvas.freeDrawingBrush.width = lastbrushsize;
-  canvas.freeDrawingBrush.color = 'rgba(0,0,0,1)';
+  canvas.freeDrawingBrush.color = brush_color;
   document.getElementById("brush").className = "btn-circle selected";
   document.getElementById("eraser").className = "btn-circle";
   document.getElementById("selectionTool").className = "btn-circle";
@@ -41,7 +42,22 @@ function changeToBrush(){
       document.getElementById("brushIcon").src = "img/icon/brush.svg";
     }
   }
+  removeselector();
 };
+
+function colorselector() {
+  if (document.getElementById("color-selection-container").style.opacity == 0) {
+    document.getElementById("color-selection-container").style.opacity = 1;
+    backToBrush();
+  } else {
+    document.getElementById("color-selection-container").style.opacity = 0;
+    backToBrush();
+  }
+}
+
+function removeselector() {
+  document.getElementById("color-selection-container").style.opacity = 0;
+}
 
 function changeToEraser(){
   canvas.isDrawingMode = true;
@@ -50,7 +66,14 @@ function changeToEraser(){
   document.getElementById("eraser").className = "btn-circle selected";
   document.getElementById("brush").className = "btn-circle";
   document.getElementById("selectionTool").className = "btn-circle";
+  removeselector();
 };
+
+function getcolor(elem){
+ brush_color = $(elem).css("background-color");
+ canvas.freeDrawingBrush.color = brush_color;
+ removeselector();
+}
 
 
 canvas.on('object:added',function(){
@@ -71,7 +94,10 @@ function backToBrush(){
   newtext = false;
   canvas.isDrawingMode = true;
   canvas.freeDrawingBrush.width = lastbrushsize;
-  canvas.freeDrawingBrush.color = 'rgba(0,0,0,1)';
+  canvas.freeDrawingBrush.color = brush_color;
+  document.getElementById("brush").className = "btn-circle selected";
+  document.getElementById("eraser").className = "btn-circle";
+  document.getElementById("selectionTool").className = "btn-circle";
 };
 
 function toSelect(){
@@ -79,4 +105,5 @@ function toSelect(){
   document.getElementById("eraser").className = "btn-circle";
   document.getElementById("brush").className = "btn-circle";
   document.getElementById("selectionTool").className = "btn-circle selected";
+  removeselector();
 };

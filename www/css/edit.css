@@ -1,7 +1,52 @@
 .canvas-container {
-  top: 80px;
+  top: 20px;
   position: absolute;
+  z-index: 0;
 }
+
+.btn-circle-small {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 3px;
+  border-radius: 12.5px;
+  background-color: #85D2EC;
+  float: left;
+  margin: 5px;
+}
+
+.red{
+  background-color: red;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.black{
+  background-color: black;
+}
+
+.green{
+  background-color: green;
+}
+
+#color-selection-container {
+  clear: both;
+  opacity: 0;
+  padding-left: 20px;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  z-index: 2;
+  position: relative;
+}
+
 
 .btn-circle {
   width: 50px;
