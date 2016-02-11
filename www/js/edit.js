@@ -73,6 +73,7 @@ function changeToEraser(){
 
 function getcolor(elem){
  brush_color = $(elem).css("background-color");
+ $(color).css("background-color",brush_color);
  canvas.freeDrawingBrush.color = brush_color;
  removeselector();
 }

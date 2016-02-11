@@ -16,6 +16,10 @@
   margin: 5px;
 }
 
+#color {
+    background-color: black;
+}
+
 .red{
   background-color: red;
 }
