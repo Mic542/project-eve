@@ -7,13 +7,9 @@
       <script src="plugins/jquery-1.8.2.min.js"></script>
     </head>
     <body>
-      <div onclick="changeToBrush()" ontouchstart="changeToBrush()" class="btn-circle selected" id="brush"><img src="img/icon/brush.svg" class="icons" /></div>
-      <div onclick="changeToEraser()" ontouchstart="changeToErase()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="icons" /></div>
-      <div onclick="undo()" ontouchstart="undo()" class="btn-circle" id="undo"><img src="img/icon/undo.svg" class="icons" /></div>
-      <div onclick="redo()" ontouchstart="redo()" class="btn-circle" id="redo"><img src="img/icon/redo.svg" class="icons" /></div>
-      <button onclick="toTexts()" ontouchstart="toTexts()">smallTEXT</button>
-      <button onclick="toTextm()" ontouchstart="toTextm()">mediumTEXT</button>
-      <button onclick="toTextl()" ontouchstart="toTextl()">largeTEXT</button>
+      <div onclick="changeToBrush()" ontouchend="changeToBrush()" class="btn-circle selected" id="brush"><img id="brushIcon" src="img/icon/brush.svg" class="mediumIcons" /></div>
+      <div onclick="changeToEraser()" ontouchend="changeToErase()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="mediumIcons" /></div>
+      <div onclick="toSelect()" ontouchend="toSelect()" id="selectionTool" class="btn-circle"><img src="img/icon/select.svg" class="mediumIcons" /></div>
       <canvas id="c" width="240" height="220"></canvas>
       <script src="js/edit.js"></script>
     </body>
