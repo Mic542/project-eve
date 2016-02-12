@@ -12,12 +12,12 @@
 }
 
 .btn-circle-small {
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   text-align: center;
   font-size: 12px;
   line-height: 3px;
-  border-radius: 12.5px;
+  border-radius: 25px;
   background-color: #85D2EC;
   float: left;
   margin: 5px;
@@ -50,7 +50,7 @@
 #color-selection-container {
   clear: both;
   opacity: 0;
-  padding-left: 20px;
+  padding-left: 50px;
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out;
@@ -60,16 +60,27 @@
 
 
 .btn-circle {
-  width: 50px;
-  height: 50px;
+  display: -webkit-flex;
+  display: flex;
+  width: 100px;
+  height: 100px;
   text-align: center;
   font-size: 12px;
   line-height: 3px;
-  border-radius: 25px;
+  border-radius: 50px;
   background-color: #85D2EC;
   float: left;
   margin: 5px;
 }
+
+#color {
+  position: relative;
+  width:90px;
+  height:90px;
+  border-radius:45px;
+  margin: auto;
+}
+
 
 .selected {
   background-color: #ff7276;
@@ -77,47 +88,6 @@
 
 
 .mediumIcons {
-  width: 30px;
-  padding-top: 10px;
-}
-
-
-.brush {
-    background-image: url(icon/brush.svg);
-    width: 30px;
-    position: relative;
-    top: 9px;
-    -moz-border-radius: 50px;
-  	-webkit-border-radius: 50px;
-  	border-radius: 50px;
-}
-
-.eraser {
-    background-image: url(icon/eraser.svg);
-    width: 30px;
-    position: relative;
-    top: 9px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-}
-
-.undo {
-    background-image: url(icon/undo.svg);
-    width: 30px;
-    position: relative;
-    top: 9px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-}
-
-.redo {
-    background-image: url(icon/redo.svg);
-    width: 30px;
-    position: relative;
-    top: 9px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
+  width: 60px;
+  margin: auto;
 }

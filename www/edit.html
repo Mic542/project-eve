@@ -11,7 +11,7 @@
       <div onclick="changeToEraser()" ontouchend="changeToErase()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="mediumIcons" /></div>
       <div onclick="toSelect()" ontouchend="toSelect()" id="selectionTool" class="btn-circle"><img src="img/icon/select.svg" class="mediumIcons" /></div>
 
-      <div class="btn-circle"><div class="btn-circle-small" onclick="colorselector()" ontouchend="colorselector()" id="color" style="width:40px; height:40px; border-radius:20px;"></div></div>
+      <div class="btn-circle"><div class="btn-circle-small" onclick="colorselector()" ontouchend="colorselector()" id="color"></div></div>
       <div id="color-selection-container">
         <div class="btn-circle-small red" onclick="getcolor(this)"></div>
         <div class="btn-circle-small blue" onclick="getcolor(this)"></div>
@@ -19,7 +19,7 @@
         <div class="btn-circle-small yellow" onclick="getcolor(this)"></div>
         <div class="btn-circle-small black" onclick="getcolor(this)"></div>
       </div>
-      <canvas id="c" width="240" height="220" class="canvas"></canvas>
+      <canvas id="c" width="440" height="440" class="canvas"></canvas>
       <script src="js/edit.js"></script>
     </body>
 </html>
