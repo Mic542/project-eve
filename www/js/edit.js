@@ -22,6 +22,7 @@ canvas.on('mouse:up', function(event){
   left: pointer.x,
   top: pointer.y,
   fontSize: textsize,
+  fill: brush_color,
   selectable: true
 }));
 newtext = false;
@@ -66,7 +67,17 @@ function changeToBrush(){
 function colorselector() {
   if (document.getElementById("color-selection-container").style.opacity == 0) {
     document.getElementById("color-selection-container").style.opacity = 1;
-    backToBrush();
+    if(wastext == true){
+      toText();
+    }
+    else{
+      if(wastext == true){
+        toText();
+      }
+      else{
+        backToBrush();
+      }
+    }
   } else {
     document.getElementById("color-selection-container").style.opacity = 0;
     backToBrush();

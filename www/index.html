@@ -5,15 +5,16 @@
       <link rel="stylesheet" type="text/css" href="css/edit.css">
       <script src="plugins/fabric.min.js"></script>
       <script src="plugins/jquery-1.8.2.min.js"></script>
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     </head>
     <body>
       <div class="wrapper_all">
         <div class="wrapper_inside">
-      <div onclick="changeToBrush()" ontouchend="changeToBrush()" class="btn-circle selected" id="brush"><img id="brushIcon" src="img/icon/brush.svg" class="mediumIcons" /></div>
-      <div onclick="changeToEraser()" ontouchend="changeToErase()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="mediumIcons" /></div>
-      <div onclick="toSelect()" ontouchend="toSelect()" id="selectionTool" class="btn-circle"><img src="img/icon/select.svg" class="mediumIcons" /></div>
+      <div onclick="changeToBrush()" class="btn-circle selected" id="brush"><img id="brushIcon" src="img/icon/brush.svg" class="mediumIcons" /></div>
+      <div onclick="changeToEraser()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="mediumIcons" /></div>
+      <div onclick="toSelect()" id="selectionTool" class="btn-circle"><img src="img/icon/select.svg" class="mediumIcons" /></div>
 
-      <div class="btn-circle"><div class="btn-circle-small" onclick="colorselector()" ontouchend="colorselector()" id="color"></div></div>
+      <div class="btn-circle"><div class="btn-circle-small" onclick="colorselector()" id="color"></div></div>
       <div id="color-selection-container">
         <div class="btn-circle-small red" onclick="getcolor(this)"></div>
         <div class="btn-circle-small blue" onclick="getcolor(this)"></div>
