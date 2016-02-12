@@ -12,8 +12,8 @@
 }
 
 .btn-circle-small {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   font-size: 12px;
   line-height: 3px;
@@ -62,8 +62,8 @@
 .btn-circle {
   display: -webkit-flex;
   display: flex;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   text-align: center;
   font-size: 12px;
   line-height: 3px;
@@ -75,8 +75,8 @@
 
 #color {
   position: relative;
-  width:90px;
-  height:90px;
+  width:50px;
+  height:50px;
   border-radius:45px;
   margin: auto;
 }
@@ -88,6 +88,6 @@
 
 
 .mediumIcons {
-  width: 60px;
+  width: 40px;
   margin: auto;
 }
