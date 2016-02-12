@@ -67,12 +67,12 @@ function changeToBrush(){
 function colorselector() {
   if (document.getElementById("color-selection-container").style.opacity == 0) {
     document.getElementById("color-selection-container").style.opacity = 1;
-    if(wastext == true){
-      toText();
-    }
-    else{
-      backToBrush();
-    }
+      if(wastext == true){
+        toText();
+      }
+      else{
+        backToBrush();
+      }
   } else {
     document.getElementById("color-selection-container").style.opacity = 0;
     if(wastext == true){
