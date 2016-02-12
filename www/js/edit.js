@@ -67,6 +67,7 @@ function changeToBrush(){
 function colorselector() {
   if (document.getElementById("color-selection-container").style.opacity == 0) {
     document.getElementById("color-selection-container").style.opacity = 1;
+    document.getElementById('color-selection-container').style.pointerEvents = 'auto';
       if(wastext == true){
         toText();
       }
@@ -75,6 +76,7 @@ function colorselector() {
       }
   } else {
     document.getElementById("color-selection-container").style.opacity = 0;
+    document.getElementById('color-selection-container').style.pointerEvents = 'none';
     if(wastext == true){
       toText();
     }
