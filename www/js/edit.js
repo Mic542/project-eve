@@ -22,7 +22,8 @@ canvas.on('mouse:up', function(event){
   left: pointer.x,
   top: pointer.y,
   fontSize: textsize,
-  selectable: true
+  selectable: true,
+  fill: brush_color
 }));
 newtext = false;
 wastext = false;
@@ -66,10 +67,20 @@ function changeToBrush(){
 function colorselector() {
   if (document.getElementById("color-selection-container").style.opacity == 0) {
     document.getElementById("color-selection-container").style.opacity = 1;
-    backToBrush();
+    if(wastext == true){
+      toText();
+    }
+    else{
+      backToBrush();
+    }
   } else {
     document.getElementById("color-selection-container").style.opacity = 0;
-    backToBrush();
+    if(wastext == true){
+      toText();
+    }
+    else{
+      backToBrush();
+    }
   }
 }
 
@@ -91,7 +102,6 @@ function getcolor(elem){
  brush_color = $(elem).css("background-color");
  $(color).css("background-color",brush_color);
  canvas.freeDrawingBrush.color = brush_color;
- removeselector();
 }
 
 
