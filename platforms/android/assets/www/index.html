@@ -4,17 +4,29 @@
     <head>
       <link rel="stylesheet" type="text/css" href="css/edit.css">
       <script src="plugins/fabric.min.js"></script>
-      <script src="plugins/jquery-1.8.2.min.js"></script>
+      <script src="plugins/jquery/jquery-1.8.2.min.js"></script>
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     </head>
     <body>
-      <div onclick="changeToBrush()" ontouchstart="changeToBrush()" class="btn-circle selected" id="brush"><img src="img/icon/brush.svg" class="icons" /></div>
-      <div onclick="changeToEraser()" ontouchstart="changeToErase()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="icons" /></div>
-      <div onclick="undo()" ontouchstart="undo()" class="btn-circle" id="undo"><img src="img/icon/undo.svg" class="icons" /></div>
-      <div onclick="redo()" ontouchstart="redo()" class="btn-circle" id="redo"><img src="img/icon/redo.svg" class="icons" /></div>
-      <button onclick="toTexts()" ontouchstart="toTexts()">smallTEXT</button>
-      <button onclick="toTextm()" ontouchstart="toTextm()">mediumTEXT</button>
-      <button onclick="toTextl()" ontouchstart="toTextl()">largeTEXT</button>
-      <canvas id="c" width="240" height="220"></canvas>
+      <div class="wrapper_all">
+      <div class="wrapper_inside">
+      <div onclick="changeToBrush()" class="btn-circle selected" id="brush"><img id="brushIcon" src="img/icon/brush.svg" class="mediumIcons" /></div>
+      <div onclick="changeToEraser()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="mediumIcons" /></div>
+      <div onclick="toSelect()" id="selectionTool" class="btn-circle"><img src="img/icon/select.svg" class="mediumIcons" /></div>
+
+      <div class="btn-circle"><div class="btn-circle-small" onclick="colorselector()" id="color">
+      <div id="color-selection-container">
+        <div class="btn-circle-small red" onclick="getcolor(this)"></div>
+        <div class="btn-circle-small blue" onclick="getcolor(this)"></div>
+        <div class="btn-circle-small green" onclick="getcolor(this)"></div>
+        <div class="btn-circle-small yellow" onclick="getcolor(this)"></div>
+        <div class="btn-circle-small black" onclick="getcolor(this)"></div>
+      </div>
+      </div>
+      </div>
+      <canvas id="c" width="300" height="300" class="canvas"></canvas>
       <script src="js/edit.js"></script>
+    </div>
+  </div>
     </body>
 </html>
