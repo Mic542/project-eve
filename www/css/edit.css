@@ -1,5 +1,5 @@
 .canvas-container {
-  top: 70px;
+  top: 80px;
   position: relative;
   z-index: 0;
 }
@@ -114,7 +114,7 @@
 
   .canvas-container {
     position: absolute;
-    top:0px;
+    top:20px;
     margin: auto;
   }
 
@@ -126,5 +126,6 @@
   .btn-circle-small {
     clear:none;
     display: inline;
+
   }
 }
