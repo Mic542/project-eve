@@ -104,6 +104,149 @@
   margin: auto;
 }
 
+.card {
+  width: 220px;
+  height:220px;
+  position: absolute;
+}
+
+.card-holder {
+  margin: auto;
+  width: 80%;
+  position: fixed;
+  bottom: 20%;
+  left: 30%;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.card:hover {
+  height: 250px;
+  width: 250px;
+  z-index: 2;
+  -webkit-transition: all 0.3s ease, left 0.3s ease;
+  -moz-transition: all 0.3s ease, left 0.3s ease;
+  -o-transition: all 0.3s ease, left 0.3s ease;
+  -ms-transition: all 0.3s ease, left 0.3s ease;
+  transition: all 0.3s ease, left 0.3s ease;
+}
+
+
+.redcard {
+  background-color: red;
+  left: -30px;
+  top: 10px;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+
+.softredcard {
+  background-color: #F58E9D;
+  left: 10px;
+  top: 0px;
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+
+
+.bluecard {
+  background-color: blue;
+  left: 50px;
+  top: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.softbluecard {
+  background-color: #D9E9FF;
+  left: 90px;
+  top: 0px;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+.yellowcard {
+  background-color: #FFFFA5;
+  left: 130px;
+  top: 10px;
+ -webkit-transform: rotate(20deg);
+ -moz-transform: rotate(20deg);
+ -o-transform: rotate(20deg);
+ -ms-transform: rotate(20deg);
+ transform: rotate(20deg);
+}
+
+.orangecard {
+background-color: #FF6600;
+left: 170px;
+ top: 20px;
+ -webkit-transform: rotate(30deg);
+ -moz-transform: rotate(30deg);
+ -o-transform: rotate(30deg);
+ -ms-transform: rotate(30deg);
+ transform: rotate(30deg);
+}
+
+
+.greencard {
+  background-color: green;
+  left: 210px;
+  top: 40px;
+ -webkit-transform: rotate(40deg);
+ -moz-transform: rotate(40deg);
+ -o-transform: rotate(40deg);
+ -ms-transform: rotate(40deg);
+ transform: rotate(40deg);
+}
+
+.softgreencard {
+  background-color: #C0D890;
+  left: 250px;
+ top: 50px;
+ -webkit-transform: rotate(50deg);
+ -moz-transform: rotate(50deg);
+ -o-transform: rotate(50deg);
+ -ms-transform: rotate(50deg);
+ transform: rotate(50deg);
+}
+
+/* Portrait*/
+
+ @media screen and (orientation:portrait) {
+   .card-holder {
+     margin: auto;
+     width: 80%;
+     position: fixed;
+     bottom: 15%;
+     left: 15%;
+     display: -webkit-flex;
+     display: flex;
+   }
+
+   .card {
+     height: 200px;
+     width: 200px;
+   }
+
+   .card:hover {
+     height: 220px;
+     width: 220px;
+   }
+ }
+
+
 /* Landscape */
 @media screen and (orientation:landscape) {
   .btn-circle {
@@ -126,6 +269,5 @@
   .btn-circle-small {
     clear:none;
     display: inline;
-
   }
 }

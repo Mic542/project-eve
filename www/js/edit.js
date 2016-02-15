@@ -7,10 +7,11 @@ var textsize;
 var brush_color = 'rgba(0,0,0,1)';
 var radius = 10;
 var wastext = false;
+var canvascolor = 'rgba(255,255,165,1)';
 
 fabric.Object.prototype.selectable = false;
 canvas.isDrawingMode = !canvas.isDrawingMode;
-canvas.setBackgroundColor('rgba(255,255,208,1)', canvas.renderAll.bind(canvas));
+canvas.setBackgroundColor(canvascolor, canvas.renderAll.bind(canvas));
 
 lastbrushsize = canvas.freeDrawingBrush.width;
 
@@ -106,6 +107,10 @@ function getcolor(elem){
  canvas.freeDrawingBrush.color = brush_color;
 }
 
+function getcolorpost(elem){
+ canvascolor = $(elem).css("background-color");
+canvas.setBackgroundColor(canvascolor, canvas.renderAll.bind(canvas));
+}
 
 canvas.on('object:added',function(){
   if(!isRedoing){
