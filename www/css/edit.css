@@ -105,25 +105,28 @@
 }
 
 .card {
-  width: 220px;
-  height:220px;
+  width: 100px;
+  height:100px;
   position: absolute;
 }
 
 .card-holder {
   margin: auto;
-  width: 80%;
+  width: 100%;
   position: fixed;
-  bottom: 20%;
-  left: 30%;
+  bottom: -10%;
+  left: -40%;
   display: -webkit-flex;
   display: flex;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .card:hover {
-  height: 250px;
-  width: 250px;
-  z-index: 2;
+  margin-top: -20px;
   -webkit-transition: all 0.3s ease, left 0.3s ease;
   -moz-transition: all 0.3s ease, left 0.3s ease;
   -o-transition: all 0.3s ease, left 0.3s ease;
@@ -223,7 +226,6 @@ left: 170px;
 }
 
 /* Portrait*/
-
  @media screen and (orientation:portrait) {
    .card-holder {
      margin: auto;
@@ -233,6 +235,11 @@ left: 170px;
      left: 15%;
      display: -webkit-flex;
      display: flex;
+     -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+     -o-transform: rotate(0deg);
+     -ms-transform: rotate(0deg);
+     transform: rotate(0deg);
    }
 
    .card {
