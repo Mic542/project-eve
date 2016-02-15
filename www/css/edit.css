@@ -103,3 +103,28 @@
   width: 40px;
   margin: auto;
 }
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+  .btn-circle {
+    clear:both;
+    right: 0px;
+    float: right;
+  }
+
+  .canvas-container {
+    position: absolute;
+    top:0px;
+    margin: auto;
+  }
+
+  .wrapper_inside {
+    width: 80%;
+    margin:auto;
+  }
+
+  .btn-circle-small {
+    clear:none;
+    display: inline;
+  }
+}
