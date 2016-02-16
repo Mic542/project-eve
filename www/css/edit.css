@@ -4,22 +4,6 @@
   z-index: 0;
 }
 
-#color-selection-container {
-  clear: both;
-  opacity: 0;
-  top: 30px;
-  right: 30px;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
-  z-index: 2;
-  position: relative;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
 
 
 .canvas{
@@ -322,19 +306,24 @@ left: 170px;
      position: absolute;
      margin-top: 40px;
    }
- }
 
    #color-selection-container {
-     clear: both;
+     clear: none;
      opacity: 0;
-     top: 30px;
+     top: 55px;
      transition: opacity .25s ease-in-out;
      -moz-transition: opacity .25s ease-in-out;
      -webkit-transition: opacity .25s ease-in-out;
      z-index: 2;
      position: relative;
+     -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+     -o-transform: rotate(0deg);
+     -ms-transform: rotate(0deg);
+     transform: rotate(0deg);
    }
  }
+
 
 
 /* Landscape */
