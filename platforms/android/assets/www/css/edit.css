@@ -59,17 +59,6 @@
   background-color: green;
 }
 
-#color-selection-container {
-  clear: both;
-  opacity: 0;
-  top: 60px;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
-  z-index: 2;
-  position: relative;
-}
-
 
 .btn-circle {
   display: -webkit-flex;
@@ -105,25 +94,28 @@
 }
 
 .card {
-  width: 220px;
-  height:220px;
+  width: 80px;
+  height:80px;
   position: absolute;
 }
 
 .card-holder {
   margin: auto;
-  width: 80%;
+  width: 100%;
   position: fixed;
-  bottom: 20%;
-  left: 30%;
+  bottom: 0%;
+  left: -35%;
   display: -webkit-flex;
   display: flex;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .card:hover {
-  height: 250px;
-  width: 250px;
-  z-index: 2;
+  margin-top: -20px;
   -webkit-transition: all 0.3s ease, left 0.3s ease;
   -moz-transition: all 0.3s ease, left 0.3s ease;
   -o-transition: all 0.3s ease, left 0.3s ease;
@@ -223,16 +215,20 @@ left: 170px;
 }
 
 /* Portrait*/
-
  @media screen and (orientation:portrait) {
    .card-holder {
      margin: auto;
      width: 80%;
      position: fixed;
      bottom: 15%;
-     left: 15%;
+     left: 10%;
      display: -webkit-flex;
      display: flex;
+     -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+     -o-transform: rotate(0deg);
+     -ms-transform: rotate(0deg);
+     transform: rotate(0deg);
    }
 
    .card {
@@ -243,6 +239,17 @@ left: 170px;
    .card:hover {
      height: 220px;
      width: 220px;
+   }
+
+   #color-selection-container {
+     clear: both;
+     opacity: 0;
+     top: 60px;
+     transition: opacity .25s ease-in-out;
+     -moz-transition: opacity .25s ease-in-out;
+     -webkit-transition: opacity .25s ease-in-out;
+     z-index: 2;
+     position: relative;
    }
  }
 
@@ -269,5 +276,27 @@ left: 170px;
   .btn-circle-small {
     clear:none;
     display: inline;
+  }
+
+  #color-selection-container {
+    clear: both;
+    opacity: 0;
+    top: 30px;
+    right: 30px;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    z-index: 2;
+    position: relative;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  body, html{
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 }

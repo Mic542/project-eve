@@ -35,4 +35,5 @@
 <feature name="FileTransfer">
     <param name="ios-package" value="CDVFileTransfer" />
 </feature>
+<preference name="Fullscreen" value = "true"/>
 </widget>

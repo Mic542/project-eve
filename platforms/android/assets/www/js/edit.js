@@ -13,6 +13,8 @@ fabric.Object.prototype.selectable = false;
 canvas.isDrawingMode = !canvas.isDrawingMode;
 canvas.setBackgroundColor(canvascolor, canvas.renderAll.bind(canvas));
 
+var eraser = canvas.backgroundColor;
+
 lastbrushsize = canvas.freeDrawingBrush.width;
 
 canvas.on('mouse:up', function(event){
@@ -94,7 +96,7 @@ function removeselector() {
 function changeToEraser(){
   canvas.isDrawingMode = true;
   canvas.freeDrawingBrush.width = 200;
-  canvas.freeDrawingBrush.color = canvas.backgroundColor;
+  canvas.freeDrawingBrush.color = eraser;
   document.getElementById("eraser").className = "btn-circle selected";
   document.getElementById("brush").className = "btn-circle";
   document.getElementById("selectionTool").className = "btn-circle";
@@ -108,8 +110,13 @@ function getcolor(elem){
 }
 
 function getcolorpost(elem){
- canvascolor = $(elem).css("background-color");
+canvas.clear();
+canvascolor = $(elem).css("background-color");
 canvas.setBackgroundColor(canvascolor, canvas.renderAll.bind(canvas));
+eraser = canvascolor;
+if(document.getElementById("eraser").className == "btn-circle selected") {
+canvas.freeDrawingBrush.color = eraser;
+}
 }
 
 canvas.on('object:added',function(){
