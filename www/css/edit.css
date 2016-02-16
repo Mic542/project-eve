@@ -35,6 +35,12 @@
   margin: auto;
 }
 
+.done{
+  margin-top: 80px;
+  text-align: center;
+}
+
+
 #color {
     background-color: black;
 }
@@ -70,6 +76,10 @@
   position: relative;
 }
 
+.tool {
+  position: absolute;
+  right:5%;
+}
 
 .btn-circle {
   display: -webkit-flex;
@@ -82,6 +92,7 @@
   border-radius: 50px;
   background-color: #85D2EC;
   float: left;
+  clear: both;
   margin: 5px;
 }
 
@@ -225,8 +236,34 @@ left: 170px;
  transform: rotate(50deg);
 }
 
+
+
 /* Portrait*/
  @media screen and (orientation:portrait) {
+   .tool {
+     text-align: center;
+   }
+
+   .btn-circle {
+     text-align: center;
+    clear: none;
+    display: -webkit-flex;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 3px;
+    border-radius: 50px;
+    background-color: #85D2EC;
+    float: left;
+    margin: 5px;
+   }
+
+   .selected {
+     background-color: #ff7276;
+   }
+
    .card-holder {
      margin: auto;
      width: 80%;
@@ -251,30 +288,11 @@ left: 170px;
      height: 220px;
      width: 220px;
    }
+
+   .done{
+     clear:both;
+     text-align: center;
+     position: absolute;
+     margin-top: 90px;
+   }
  }
-
-
-/* Landscape */
-@media screen and (orientation:landscape) {
-  .btn-circle {
-    clear:both;
-    right: 0px;
-    float: right;
-  }
-
-  .canvas-container {
-    position: absolute;
-    top:20px;
-    margin: auto;
-  }
-
-  .wrapper_inside {
-    width: 80%;
-    margin:auto;
-  }
-
-  .btn-circle-small {
-    clear:none;
-    display: inline;
-  }
-}
