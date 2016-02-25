@@ -9,6 +9,12 @@ var radius = 10;
 var wastext = false;
 var canvascolor = 'rgba(255,255,165,1)';
 
+
+var db = new PouchDB('http://localhost:5984/dbname');
+
+db.info();
+
+
 fabric.Object.prototype.selectable = false;
 canvas.isDrawingMode = !canvas.isDrawingMode;
 canvas.setBackgroundColor(canvascolor, canvas.renderAll.bind(canvas));
