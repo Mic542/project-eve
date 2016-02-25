@@ -182,8 +182,19 @@ var errorHandler = function (fileName, e) {
     console.log('Error (' + '): ' + msg);
 }
 
-    function writeToFile(fileName, data) {
-        data = JSON.stringify(data, null, '\t');
+    function writeToFile(data) {
+
+      var TForm = document.getElementById('THE_form');
+      var Tel = TForm.elements["title_field"];
+      var Tagel = TForm.elements["tag_field"];
+      var Data = JSON.stringify(data,null,null);
+      Data = Data.substr(0,Data.length -1)
+      var holder = ',"title":"' + Tel.value + '","tag":"' + Tagel.value + '"}';
+      console.log(Data);
+      console.log(holder);
+      Data = Data.concat(holder);
+      console.log(Data);
+        fileName = Tel.value;
         window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (directoryEntry) {
             directoryEntry.getFile(fileName, { create: true }, function (fileEntry) {
                 fileEntry.createWriter(function (fileWriter) {
@@ -197,7 +208,7 @@ var errorHandler = function (fileName, e) {
                         console.log('Write failed: ' + e.toString());
                     };
 
-                    var blob = new Blob([data], { type: 'text/plain' });
+                    var blob = new Blob([Data], { type: 'text/plain' });
                     fileWriter.write(blob);
                 }, errorHandler.bind(null, fileName));
             }, errorHandler.bind(null, fileName));
@@ -213,7 +224,6 @@ var errorHandler = function (fileName, e) {
                 reader.onloadend = function (e) {
                     cb(JSON.parse(this.result));
                 };
-
                 reader.readAsText(file);
             }, errorHandler.bind(null, fileName));
         }, errorHandler.bind(null, fileName));
@@ -221,8 +231,13 @@ var errorHandler = function (fileName, e) {
 
 function loadFromFile(filename){
     var fileData;
+    var TForm = document.getElementById('THE_form');
+    var Tel = TForm.elements["title_field"];
+    var Tagel = TForm.elements["tag_field"];
     readFromFile(filename, function (data) {
         fileData = data;
+        Tel.value = fileData.title;
+        Tagel.value = fileData.tag;
         canvas.loadFromJSON(fileData);
 
     });

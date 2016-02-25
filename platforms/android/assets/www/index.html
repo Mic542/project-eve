@@ -8,8 +8,8 @@
       <link rel="stylesheet" type="text/css" href="plugins/bootstrap-3.3.6-dist/css/bootstrap.min.css">
 
       <script src="cordova.js"></script>
-      <script src="plugins/jquery/jquery-1.8.2.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="plugins/jquery/jquery-1.12.1.min.js"></script>
+
       <script src="plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
       <script src="plugins/fabric.min.js"></script>
 
@@ -52,19 +52,19 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Insert Title and Add Tags</h4>
       </div>
-      <div class="modal-body">
-        <div class="form-group">
+      <form class="modal-body" id="THE_form">
+        <div class="form-group" method="post">
           <label for="usr">Title:</label>
-          <input type="text" class="form-control" id="title">
+          <input type="text" class="form-control" id="title_field">
         </div>
         <div class="form-group">
           <label for="pwd">Tag:</label>
-          <input type="password" class="form-control" id="tag">
+          <input type="text" class="form-control" id="tag_field">
         </div>
-      </div>
+      </form>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="writeToFile('fileName', canvas)">Save</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="loadFromFile('fileName')">Load</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick='writeToFile(canvas)'>Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="loadFromFile('title')">Load</button>
       </div>
     </div>
 
