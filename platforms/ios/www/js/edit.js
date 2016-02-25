@@ -13,6 +13,8 @@ fabric.Object.prototype.selectable = false;
 canvas.isDrawingMode = !canvas.isDrawingMode;
 canvas.setBackgroundColor(canvascolor, canvas.renderAll.bind(canvas));
 
+var eraser = canvas.backgroundColor;
+
 lastbrushsize = canvas.freeDrawingBrush.width;
 
 canvas.on('mouse:up', function(event){
@@ -94,7 +96,7 @@ function removeselector() {
 function changeToEraser(){
   canvas.isDrawingMode = true;
   canvas.freeDrawingBrush.width = 200;
-  canvas.freeDrawingBrush.color = canvas.backgroundColor;
+  canvas.freeDrawingBrush.color = eraser;
   document.getElementById("eraser").className = "btn-circle selected";
   document.getElementById("brush").className = "btn-circle";
   document.getElementById("selectionTool").className = "btn-circle";
@@ -108,8 +110,13 @@ function getcolor(elem){
 }
 
 function getcolorpost(elem){
- canvascolor = $(elem).css("background-color");
+canvas.clear();
+canvascolor = $(elem).css("background-color");
 canvas.setBackgroundColor(canvascolor, canvas.renderAll.bind(canvas));
+eraser = canvascolor;
+if(document.getElementById("eraser").className == "btn-circle selected") {
+canvas.freeDrawingBrush.color = eraser;
+}
 }
 
 canvas.on('object:added',function(){
@@ -146,3 +153,32 @@ function toSelect(){
   removeselector();
   newtext = false;
 };
+
+document.addEventListener('deviceready', onDeviceReady, false);
+function onDeviceReady() {
+    function writeToFile(fileName, data) {
+        data = JSON.stringify(data, null, '\t');
+        window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function (directoryEntry) {
+            directoryEntry.getFile(fileName, { create: true }, function (fileEntry) {
+                fileEntry.createWriter(function (fileWriter) {
+                    fileWriter.onwriteend = function (e) {
+                        // for real-world usage, you might consider passing a success callback
+                        console.log('Write of file "' + fileName + '"" completed.');
+                        canvas.setBackgroundColor('rgba(255,0,0,1)', canvas.renderAll.bind(canvas));
+                    };
+
+                    fileWriter.onerror = function (e) {
+                        // you could hook this up with our global error handler, or pass in an error callback
+                        console.log('Write failed: ' + e.toString());
+                        canvas.setBackgroundColor('rgba(0,255,0,1)', canvas.renderAll.bind(canvas));
+                    };
+
+                    var blob = new Blob([data], { type: 'text/plain' });
+                    fileWriter.write(blob);
+                }, errorHandler.bind(null, fileName));
+            }, errorHandler.bind(null, fileName));
+        }, errorHandler.bind(null, fileName));
+    }
+
+    writeToFile('example.json', { foo: 'bar' });
+}

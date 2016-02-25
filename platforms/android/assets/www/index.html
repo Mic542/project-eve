@@ -3,13 +3,22 @@
 <html>
     <head>
       <link rel="stylesheet" type="text/css" href="css/edit.css">
-      <script src="plugins/fabric.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="plugins/pure-release-0.6.0/pure-min.css">
+      <link rel="stylesheet" type="text/css" href="plugins/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+      <link rel="stylesheet" type="text/css" href="plugins/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+
+      <script src="cordova.js"></script>
       <script src="plugins/jquery/jquery-1.8.2.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+      <script src="plugins/fabric.min.js"></script>
+
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     </head>
     <body>
-      <div class="wrapper_all">
+      <div class="wrapper_all" data-enhance="false">
       <div class="wrapper_inside">
+      <div class="tool">
       <div onclick="changeToBrush()" class="btn-circle selected" id="brush"><img id="brushIcon" src="img/icon/brush.svg" class="mediumIcons" /></div>
       <div onclick="changeToEraser()" class="btn-circle" id="eraser"><img src="img/icon/eraser.svg" class="mediumIcons" /></div>
       <div onclick="toSelect()" id="selectionTool" class="btn-circle"><img src="img/icon/select.svg" class="mediumIcons" /></div>
@@ -24,11 +33,47 @@
       </div>
       </div>
     </div>
-
+</div>
 
       <canvas id="c" width="300" height="300" class="canvas"></canvas>
+
+
+
+      <div class="done">
+        <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Done</button>
+      </div>
+
+    <div id="myModal" class="modal" role="dialog">
+        <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Insert Title and Add Tags</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="usr">Title:</label>
+          <input type="text" class="form-control" id="title">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Tag:</label>
+          <input type="password" class="form-control" id="tag">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="writeToFile('fileName', canvas)">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="loadFromFile('fileName')">Load</button>
+      </div>
     </div>
 
+  </div>
+</div>
+
+
+
+    </div>
     <div class="card-holder">
       <div class="redcard card" onclick="getcolorpost(this)"></div>
       <div class="softredcard card" onclick="getcolorpost(this)"></div>
