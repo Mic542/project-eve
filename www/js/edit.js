@@ -190,10 +190,7 @@ var errorHandler = function (fileName, e) {
       var Data = JSON.stringify(data,null,null);
       Data = Data.substr(0,Data.length -1)
       var holder = ',"title":"' + Tel.value + '","tag":"' + Tagel.value + '"}';
-      console.log(Data);
-      console.log(holder);
       Data = Data.concat(holder);
-      console.log(Data);
         fileName = Tel.value;
         window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (directoryEntry) {
             directoryEntry.getFile(fileName, { create: true }, function (fileEntry) {
