@@ -12,8 +12,6 @@ var canvascolor = 'rgba(255,255,165,1)';
 
 var db = new PouchDB('http://localhost:5984/dbname');
 
-db.info();
-
 
 fabric.Object.prototype.selectable = false;
 canvas.isDrawingMode = !canvas.isDrawingMode;
@@ -194,9 +192,26 @@ var errorHandler = function (fileName, e) {
       var Tel = TForm.elements["title_field"];
       var Tagel = TForm.elements["tag_field"];
       var Data = JSON.stringify(data,null,null);
+      var pos = Math.random() * 200;
       Data = Data.substr(0,Data.length -1)
       var holder = ',"title":"' + Tel.value + '","tag":"' + Tagel.value + '"}';
       Data = Data.concat(holder);
+      var cell = {
+          _id: foo + new Date().toISOString(),
+          canvas: Data,
+          title: Tel.value,
+          tags: Tagel.value,
+          posX: pos,
+          posY: pos,
+      };
+
+      db.put(cell, function callback(err, result) {
+        if (!err) {
+          console.log('Successfully posted a todo!');
+        }
+      });
+
+      db.info();
         fileName = Tel.value;
         window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (directoryEntry) {
             directoryEntry.getFile(fileName, { create: true }, function (fileEntry) {
