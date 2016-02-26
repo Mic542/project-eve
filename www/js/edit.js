@@ -197,7 +197,7 @@ var errorHandler = function (fileName, e) {
       var holder = ',"title":"' + Tel.value + '","tag":"' + Tagel.value + '"}';
       Data = Data.concat(holder);
       var cell = {
-          _id: foo + new Date().toISOString(),
+          _id: 'foo' + new Date().toISOString(),
           canvas: Data,
           title: Tel.value,
           tags: Tagel.value,
