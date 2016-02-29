@@ -31,6 +31,7 @@ db.allDocs({
 
 var rows = result.rows;
 console.log(rows);
+document.getElementById('save').addEventListener("mouseup", addFunc);
   for (k in rows) {
     console.log(rows[k]);
     var btn = document.createElement("div");
@@ -48,7 +49,6 @@ console.log(rows);
     btn.tag = rows[k].doc.tags;
     btn.tit = rows[k].doc.title;
     btn.bgc = rows[k].doc.bgc;
-    btn.addEventListener("mouseup", addFunc);
     var t = document.createTextNode(rows[k].doc.title);
     btn.appendChild(t);
     document.body.appendChild(btn);

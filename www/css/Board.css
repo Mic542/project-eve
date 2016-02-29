@@ -41,3 +41,8 @@ padding-left: 12px;
 img {
   padding-right: 5px;
 }
+.save {
+  position: absolute;
+  right: 20px;
+  bottom: 200px;
+}
