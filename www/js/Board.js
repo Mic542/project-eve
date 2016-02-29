@@ -9,7 +9,8 @@ var addFunc = function(e) {
       posY: this.style.top,
       title: this.tit,
       tags: this.tag,
-      canvas: this.can
+      canvas: this.can,
+      bgc: this.bgc
   };
 
   db.put(cell, function callback(err, result) {
@@ -39,11 +40,14 @@ console.log(rows);
     btn.style.border = "medium solid #000000";
     btn.style.width = "90px";
     btn.style.height = "90px";
+    btn.style.backgroundColor= rows[k].doc.bgc;
+    btn.style.border = rows[k].doc.bgc;
     btn.id = rows[k].doc._id;
     btn.rev = rows[k].doc._rev;
     btn.can = rows[k].doc.canvas;
     btn.tag = rows[k].doc.tags;
     btn.tit = rows[k].doc.title;
+    btn.bgc = rows[k].doc.bgc;
     btn.addEventListener("mouseup", addFunc);
     var t = document.createTextNode(rows[k].doc.title);
     btn.appendChild(t);

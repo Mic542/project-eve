@@ -203,6 +203,7 @@ var errorHandler = function (fileName, e) {
           tags: Tagel.value,
           posX: pos,
           posY: pos,
+          bgc: canvascolor
       };
 
       db.put(cell, function callback(err, result) {
