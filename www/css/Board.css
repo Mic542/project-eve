@@ -1,0 +1,43 @@
+.navfixed {
+width: 100%;
+position: fixed;
+top : 0px;
+height: auto;
+background-color: steelblue;
+padding: 3px;
+}
+
+.menuicon {
+  position: absolute;
+  right: 0px;
+}
+
+.nav-pills>li {
+  float: right;
+  padding-right: 5px;
+}
+
+.dropdown-menu {
+  right: 0px;
+  float: right;
+  left: auto;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+  background-color: transparent;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: transparent;
+}
+
+.choice {
+font-size: 16px;
+text-align: left;
+margin-right: 18px;
+padding-left: 12px;
+}
+
+img {
+  padding-right: 5px;
+}
