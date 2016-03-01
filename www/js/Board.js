@@ -54,11 +54,13 @@ function addFunc(posts) {
  db.put(cell, function callback(err, result) {
    if (!err) {
      console.log('Successfully posted a todo!');
+     if(i == posts.length -1){
+       location.reload();
+     }
    }
    else{
      console.log(err);
    }
  });
  }
- //location.reload();
 };
