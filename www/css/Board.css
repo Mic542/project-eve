@@ -1,3 +1,33 @@
+.btn-circle {
+ text-align: center;
+ clear: none;
+ display: -webkit-flex;
+ display: flex;
+ width: 60px;
+ height: 60px;
+ text-align: center;
+ font-size: 12px;
+ line-height: 3px;
+ border-radius: 50px;
+ background-color: #85D2EC;
+ float: left;
+ margin: 5px;
+ z-index: 70;
+}
+
+.tool {
+  background-color: #6395a0;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 30px;
+  float: left;
+  z-index: 70;
+}
+
+.drag {
+  z-index: 30;
+}
+
 .navfixed {
 width: 100%;
 position: fixed;
