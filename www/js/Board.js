@@ -1,37 +1,11 @@
 var db = new PouchDB('http://localhost:5984/dbname');
 
-var addFunc = function(e) {
-
-  var cell = {
-      _id: this.id,
-      _rev: this.rev,
-      posX: this.style.left,
-      posY: this.style.top,
-      title: this.tit,
-      tags: this.tag,
-      canvas: this.can,
-      bgc: this.bgc
-  };
-
-  db.put(cell, function callback(err, result) {
-    if (!err) {
-      console.log('Successfully posted a todo!');
-        location.reload();
-    }
-    else{
-      console.log(err);
-    }
-  });
-
-}
-
 db.allDocs({
   include_docs: true,
 }).then(function (result) {
 
 var rows = result.rows;
 console.log(rows);
-document.getElementById('save').addEventListener("mouseup", addFunc);
   for (k in rows) {
     console.log(rows[k]);
     var btn = document.createElement("div");
@@ -54,9 +28,48 @@ document.getElementById('save').addEventListener("mouseup", addFunc);
     document.body.appendChild(btn);
     btn.className = "drag";
     $( ".drag" ).draggable();
+    btn.onclick = function(){
+      if(this.ondragstart = function() { return true; } == true){
+        return false;
+      }
+      else{
+        sessionStorage.setItem('id', this.id);
+        window.location.href = "index.html";
+      }
+    }
   }
-
+  setTimeout(function() {
+          document.getElementById('save').addEventListener("click", function() {addFunc(document.getElementsByClassName("drag"));}, false);
+      }, 10);
 
 }).catch(function (err) {
   console.log(err);
 });
+
+function addFunc(posts) {
+
+  for( var i = 0; i < posts.length; i++){
+ var cell = {
+     _id: posts[i].id,
+     _rev: posts[i].rev,
+     posX: posts[i].style.left,
+     posY: posts[i].style.top,
+     title: posts[i].tit,
+     tags: posts[i].tag,
+     canvas: posts[i].can,
+     bgc: posts[i].bgc
+ };
+
+ db.put(cell, function callback(err, result) {
+   if (!err) {
+     console.log('Successfully posted a todo!');
+     if(i == posts.length -1){
+       location.reload();
+     }
+   }
+   else{
+     console.log(err);
+   }
+ });
+ }
+};

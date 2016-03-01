@@ -12,6 +12,13 @@ var canvascolor = 'rgba(255,255,165,1)';
 
 var db = new PouchDB('http://localhost:5984/dbname');
 
+if (sessionStorage.getItem('id') != null) {
+  var curPost = db.get(sessionStorage.getItem('id')).then(function(result){
+  canvas.loadFromJSON(result.canvas);
+  sessionStorage.removeItem('id');
+});
+}
+
 
 fabric.Object.prototype.selectable = false;
 canvas.isDrawingMode = !canvas.isDrawingMode;
