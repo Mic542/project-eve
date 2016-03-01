@@ -28,6 +28,15 @@ console.log(rows);
     document.body.appendChild(btn);
     btn.className = "drag";
     $( ".drag" ).draggable();
+    btn.onclick = function(){
+      if(this.ondragstart = function() { return true; } == true){
+        return false;
+      }
+      else{
+        sessionStorage.setItem('id', this.id);
+        window.location.href = "index.html";
+      }
+    }
   }
   setTimeout(function() {
           document.getElementById('save').addEventListener("click", function() {addFunc(document.getElementsByClassName("drag"));}, false);
