@@ -1,8 +1,18 @@
+
+
 var db = new PouchDB('http://localhost:5984/dbname');
+
+
+var canvas = new fabric.Canvas('d');
+canvas.setWidth(11892);
+canvas.setHeight(11892);
+canvas.isDrawingMode = true;
+canvas.freeDrawingBrush.width = 5;
 
 db.allDocs({
   include_docs: true,
 }).then(function (result) {
+
 
 var rows = result.rows;
 console.log(rows);
@@ -72,4 +82,8 @@ function addFunc(posts) {
    }
  });
  }
+};
+
+function changeToBrush(){
+  canvas.isDrawingMode = true;
 };

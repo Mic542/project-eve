@@ -15,6 +15,21 @@
  z-index: 70;
 }
 
+.canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.lower-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas2 {
+  width: 100%;
+  height: 100%;
+}
+
 .tool {
   background-color: #6395a0;
   border-radius: 50px;
