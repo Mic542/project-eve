@@ -1,0 +1,60 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/edit.css">
+  <link rel="stylesheet" type="text/css" href="plugins/pure-release-0.6.0/pure-min.css">
+  <link rel="stylesheet" type="text/css" href="plugins/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" type="text/css" href="plugins/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/board.css">
+
+
+
+  <script src="cordova.js"></script>
+  <script src="plugins/jquery/jquery-1.12.1.min.js"></script>
+  <script src="plugins/jquery-ui.min.js"></script>
+
+  <script src="plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+  <script src="plugins/fabric.min.js"></script>
+
+  <style type="text/css">
+     @font-face {   font-family: 'Glyphicons Halflings';
+     src: url('plugins/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.eot');
+     src: url('plugins/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+     url('plugins/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff') format('woff'),
+     url('plugins/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+     url('plugins/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg'); }
+  </style>
+
+  <script src="plugins/pouchdb-5.2.1.min.js"></script>
+  <script src="js/board.js"></script>
+
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+</head>
+<body>
+  <div class="navfixed">
+  <ul class="nav nav-pills">
+
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <img src="css/icon/menu.svg" height="25" width="25">
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li class="choice"><img src="css/icon/boardlist.svg" height="35" width="35">BOARDLIST</li>
+        <li role="separator" class="divider"></li>
+        <li class="choice"><img src="css/icon/user.svg" height="30" width="30">USER</li>
+        <li role="separator" class="divider"></li>
+        <li class="choice"><img src="css/icon/timeline.svg" height="35" width="35">TIMELINE</li>
+
+      </ul>
+    </li>
+
+
+
+  </ul>
+</div>
+<div class="tool">
+<div onclick="toSelect()" id="selectionTool" class="btn-circle"><img src="img/icon/select.svg" class="mediumIcons" /></div>
+<div onclick="changeToBrush()" class="btn-circle selected" id="brush"><img id="brushIcon" src="img/icon/brush.svg" class="mediumIcons" /></div>
+</div>
+<button class="save" id="save">SAVE</button>
+</body>
+</html>

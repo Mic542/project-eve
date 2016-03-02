@@ -8,6 +8,8 @@ var brush_color = 'rgba(0,0,0,1)';
 var radius = 10;
 var wastext = false;
 var canvascolor = 'rgba(255,255,165,1)';
+var curid;
+var currev;
 
 
 var db = new PouchDB('http://localhost:5984/dbname');
@@ -15,6 +17,8 @@ var db = new PouchDB('http://localhost:5984/dbname');
 if (sessionStorage.getItem('id') != null) {
   var curPost = db.get(sessionStorage.getItem('id')).then(function(result){
   canvas.loadFromJSON(result.canvas);
+  curid = result._id;
+  currev = result._rev;
   sessionStorage.removeItem('id');
 });
 }
@@ -203,7 +207,8 @@ var errorHandler = function (fileName, e) {
       Data = Data.substr(0,Data.length -1)
       var holder = ',"title":"' + Tel.value + '","tag":"' + Tagel.value + '"}';
       Data = Data.concat(holder);
-      var cell = {
+      if(curid == null){
+        var cell = {
           _id: 'foo' + new Date().toISOString(),
           canvas: Data,
           title: Tel.value,
@@ -212,6 +217,19 @@ var errorHandler = function (fileName, e) {
           posY: pos,
           bgc: canvascolor
       };
+    }
+    else{
+      var cell = {
+        _id: curid,
+        _rev: currev,
+        canvas: Data,
+        title: Tel.value,
+        tags: Tagel.value,
+        posX: pos,
+        posY: pos,
+        bgc: canvascolor
+    };
+    }
 
       db.put(cell, function callback(err, result) {
         if (!err) {
@@ -267,4 +285,8 @@ function loadFromFile(filename){
         canvas.loadFromJSON(fileData);
 
     });
+  }
+
+  function back(){
+    window.location.href = "Board.html";
   }

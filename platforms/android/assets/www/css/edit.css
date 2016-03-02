@@ -301,10 +301,18 @@ left: 170px;
    }
 
    .done{
-     clear:both;
+     clear:none;
+     float: left;
      text-align: center;
      position: absolute;
      margin-top: 40px;
+     display: -webkit-inline-box
+   }
+
+   .done_2 {
+     text-align: right;
+     margin-top: 15px;
+     margin-left: 70%;
    }
 
    #color-selection-container {
@@ -325,9 +333,28 @@ left: 170px;
  }
 
 
-
 /* Landscape */
 @media screen and (orientation:landscape) {
+  .back {
+
+    float: left;
+    margin-left: 5px;
+  }
+
+  .done_2 {
+    text-align: right;
+    margin-top: 15px;
+    margin-left: 70%;
+  }
+
+  .done {
+  text-align: center;
+  width: 30%;
+  position: relative;
+  left: 35%;
+  }
+
+
   .btn-circle {
     clear:both;
     right: 0px;

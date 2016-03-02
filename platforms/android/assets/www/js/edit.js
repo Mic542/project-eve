@@ -9,6 +9,17 @@ var radius = 10;
 var wastext = false;
 var canvascolor = 'rgba(255,255,165,1)';
 
+
+var db = new PouchDB('http://localhost:5984/dbname');
+
+if (sessionStorage.getItem('id') != null) {
+  var curPost = db.get(sessionStorage.getItem('id')).then(function(result){
+  canvas.loadFromJSON(result.canvas);
+  sessionStorage.removeItem('id');
+});
+}
+
+
 fabric.Object.prototype.selectable = false;
 canvas.isDrawingMode = !canvas.isDrawingMode;
 canvas.setBackgroundColor(canvascolor, canvas.renderAll.bind(canvas));
@@ -188,12 +199,27 @@ var errorHandler = function (fileName, e) {
       var Tel = TForm.elements["title_field"];
       var Tagel = TForm.elements["tag_field"];
       var Data = JSON.stringify(data,null,null);
+      var pos = Math.random() * 200;
       Data = Data.substr(0,Data.length -1)
       var holder = ',"title":"' + Tel.value + '","tag":"' + Tagel.value + '"}';
-      console.log(Data);
-      console.log(holder);
       Data = Data.concat(holder);
-      console.log(Data);
+      var cell = {
+          _id: 'foo' + new Date().toISOString(),
+          canvas: Data,
+          title: Tel.value,
+          tags: Tagel.value,
+          posX: pos,
+          posY: pos,
+          bgc: canvascolor
+      };
+
+      db.put(cell, function callback(err, result) {
+        if (!err) {
+          console.log('Successfully posted a todo!');
+        }
+      });
+
+      db.info();
         fileName = Tel.value;
         window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (directoryEntry) {
             directoryEntry.getFile(fileName, { create: true }, function (fileEntry) {
@@ -241,4 +267,8 @@ function loadFromFile(filename){
         canvas.loadFromJSON(fileData);
 
     });
+  }
+
+  function back(){
+    window.location.href = "Board.html";
   }

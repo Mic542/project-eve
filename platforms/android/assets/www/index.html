@@ -12,6 +12,7 @@
 
       <script src="plugins/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
       <script src="plugins/fabric.min.js"></script>
+      <script src="plugins/pouchdb-5.2.1.min.js"></script>
 
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     </head>
@@ -40,8 +41,16 @@
 
 
       <div class="done">
-        <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Done</button>
+        <div class="back">
+          <div class="btn-circle-small"  onclick="back()">
+          <img src="css/icon/back.svg" height="40" width="40">
+        </div>
+        </div>
+        <div class="done_2">
+                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Done</button>
+              </div>
       </div>
+
 
     <div id="myModal" class="modal" role="dialog">
         <div class="modal-dialog modal-sm">
@@ -84,6 +93,8 @@
       <div class="purplecard card" onclick="getcolorpost(this)"></div>
       <div class="softgreencard card" onclick="getcolorpost(this)"></div>
     </div>
+
+
       <script src="js/edit.js"></script>
     </div>
   </div>
